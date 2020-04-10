@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "babel site/src --out-dir site/lib && node workers/build-index.js && cp -R static/* dist",
+    "build": "babel site/src --out-dir site/lib && node cli/build.js && cp -R static/* dist",
     "lint": "eslint './**/*.js'",
     "lint:fix": "eslint --fix './**/*.js'",
     "watch": "npm-watch"
