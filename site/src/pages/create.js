@@ -7,8 +7,10 @@ const {
   Input,
   Label,
   Card,
-  Grid,
-  GridCell
+  Dialog,
+  Checkbox,
+  Button,
+  Footer
 } = require("react-alegrify-ui");
 
 const Head = require("../components/head");
@@ -18,7 +20,7 @@ const HUG_TYPES = [
   {
     image: "https://media.giphy.com/media/M9gU6uprqD1LWcKlKm/giphy.gif",
     alt: "Being alone sucks - Rachel Green",
-    title: "Social distancy hug",
+    title: "Social distancing hug",
     content: `This hug let's your friend know they're not alone, although they're somewhat pshysically are.`
   },
   {
@@ -34,11 +36,24 @@ const HUG_TYPES = [
     title: "The highest of fives",
     content:
       "Why give a hug if you can send a legen... WAIT FOR IT... dary high five?"
+  },
+  {
+    image: "https://media.giphy.com/media/3oxHQDfHIGY7jYSbuw/giphy.gif",
+    alt: "Take it sleazy - Michael of the good place",
+    title: "Take it sleazy",
+    content:
+      "Remind your loved ones to take things easy while they're living in the bad place"
+  },
+  {
+    image: "https://media.giphy.com/media/YT95XJOLvY1t2SJgpR/giphy.gif",
+    alt: "Hang in there",
+    title: "Hang in there",
+    content: "Don't give up! The crisis will end one day... maybe..."
   }
 ];
 
 function Create() {
-  const title = "Create virtual hug";
+  const title = "Create coronafree hug";
   return (
     <html lang="en">
       <Head title={title} />
@@ -50,14 +65,9 @@ function Create() {
               <H2>Who deserves a hug?</H2>
 
               <Label htmlFor="receiverName">Name of this amazing person</Label>
-              <Input name="receiver_name" id="receiverName" spaceL />
-
-              <Label htmlFor="receiverEmail">
-                Email of this amazing person
-              </Label>
-              <Input name="receiver_email" id="receveiverEmail" />
+              <Input name="receiver_name" id="receiverName" required />
             </Section>
-            <Section>
+            <Section spaceXL>
               <H2>What kind of hug?</H2>
               <small
                 className="alegrify-space--large"
@@ -75,11 +85,13 @@ function Create() {
                 )
               </small>
 
-              <Grid>
+              <div
+                className="alegrify-align-child--start"
+                style={{ overflow: "auto", margin: "0 -8px" }}
+              >
                 {HUG_TYPES.map(hug => (
-                  <GridCell fo>
+                  <div key={hug.title} style={{ padding: "0 8px" }}>
                     <Card
-                      key={hug.title}
                       image={hug.image}
                       alt={hug.alt}
                       title={hug.title}
@@ -91,12 +103,40 @@ function Create() {
                     >
                       {hug.content}
                     </Card>
-                  </GridCell>
+                  </div>
                 ))}
-              </Grid>
+              </div>
+            </Section>
+
+            <Section spaceXL>
+              <H2>Can the virtual hug be exchanged for a real hug?</H2>
+              <Checkbox name="exchangable" id="exchangable">
+                By checking this box I acknowledge that this hug can be
+                exchanged for a real and physical hug after the lockdown ends
+                for the countries where either of the involved parties are
+                living in. It is required to show the attached coronafreehug
+                ticket in order to receive the physical hug.
+              </Checkbox>
+            </Section>
+
+            <Section>
+              <H2>Anything to add?</H2>
+              <Label htmlFor="additionalComments">
+                Add some more text here to personalize the hug
+              </Label>
+              <Input id="additionalComments" multiline spaceL />
+              <Button id="submitButton" primary>
+                Generate hug
+              </Button>
             </Section>
           </form>
         </Main>
+        <Footer className="alegrify-align-text--center">
+          Made with ❤ in quarantine
+        </Footer>
+        <Dialog id="successDialog" title="Your hug is live!">
+          Now share this link to the hug: ...
+        </Dialog>
       </Body>
     </html>
   );
