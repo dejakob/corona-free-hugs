@@ -60,7 +60,7 @@ function Create() {
       <Body>
         <H1 className="alegrify-align-text--center">{title}</H1>
         <Main>
-          <form action="create.html" method="POST">
+          <form action="https://us-central1-experiments-248915.cloudfunctions.net/create-hug" method="POST">
             <Section spaceXL>
               <H2>Who deserves a hug?</H2>
 
@@ -95,6 +95,7 @@ function Create() {
                       image={hug.image}
                       alt={hug.alt}
                       title={hug.title}
+                      value={hug.image}
                       width={300}
                       height={300}
                       checkType="radio"
@@ -124,7 +125,7 @@ function Create() {
               <Label htmlFor="additionalComments">
                 Add some more text here to personalize the hug
               </Label>
-              <Input id="additionalComments" multiline spaceL />
+              <Input id="additionalComments" name="additional_comments" multiline spaceL />
               <Button id="submitButton" primary>
                 Generate hug
               </Button>
