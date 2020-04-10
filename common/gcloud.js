@@ -32,7 +32,7 @@ async function getCredentials() {
     "client_x509_cert_url"
   ].forEach(key => {
     if (process.env && process.env[key]) {
-      credentials[key] = process.env[key];
+      credentials[key] = process.env[key].replace(/\\n/gm, '\n');
     }
   });
 
