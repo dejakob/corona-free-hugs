@@ -1,7 +1,10 @@
 const fs = require("fs");
 const path = require("path");
 const { promisify } = require("util");
+const mkdir = promisify(fs.mkdir);
 const writeFile = promisify(fs.writeFile);
+const deleteFile = promisify(fs.unlink);
+const rmdir = promisify(fs.rmdir);
 
 const cuid = require("cuid");
 
@@ -27,6 +30,12 @@ async function createHug(body) {
   // Output index contents
   try {
     await writeFile(path.join(__dirname, `./temp/${id}.html`), hugHtml);
+  } catch (ex) {
+    console.error(ex);
+  }
+
+  // Upload to gcloud
+  try {
     await uploadFileToBucket(
       path.join(__dirname, `./temp/${id}.html`),
       path.join(__dirname, `./temp`)
@@ -35,7 +44,22 @@ async function createHug(body) {
     console.error(ex);
   }
 
-  return;
+  // Delete temp file
+  try {
+    await deleteFile(path.join(__dirname, `./temp/${id}.html`));
+  } catch (ex) {
+    console.error(ex);
+  }
+
+  // Return id of created file
+  return id;
 }
 
 module.exports = createHug;
+
+createHug({
+  receiver_name: "jhj",
+  hug_type: "https://media.giphy.com/media/M9gU6uprqD1LWcKlKm/giphy.gif",
+  exchangable: "on",
+  additional_comments: "bhjb"
+}).then(console.log);
