@@ -19,29 +19,19 @@ async function createHug(body) {
   });
   const id = cuid();
 
-  // Create dist folder if not existing
-  try {
-    await mkdir(path.join(__dirname, "./temp"));
-  } catch (ex) {
-    console.info("Temp dir already exists");
-  }
-
   // Output index contents
-  await writeFile(path.join(__dirname, `./temp/${id}.html`), hugHtml);
+  await writeFile(`/tmp/${id}.html`, hugHtml);
 
   // Upload to gcloud
   try {
-    await uploadFileToBucket(
-      path.join(__dirname, `./temp/${id}.html`),
-      path.join(__dirname, `./temp`)
-    );
+    await uploadFileToBucket(`/tmp/${id}.html`, "/tmp");
   } catch (ex) {
     console.error(ex);
   }
 
   // Delete temp file
   try {
-    await deleteFile(path.join(__dirname, `./temp/${id}.html`));
+    await deleteFile(`/tmp/${id}.html`);
   } catch (ex) {
     console.error(ex);
   }
