@@ -5,7 +5,13 @@ const Head = require("../components/head");
 const Body = require("../components/body");
 const HUG_TYPES = require("../config/hug-types");
 
-function Hug({ hugType, senderName, receiverName, additionalComments }) {
+function Hug({
+  hugType,
+  senderName,
+  receiverName,
+  additionalComments,
+  exchangable
+}) {
   const { title: imageTitle, image, alt } = HUG_TYPES.find(
     ht => ht.image === hugType
   );
@@ -20,13 +26,24 @@ function Hug({ hugType, senderName, receiverName, additionalComments }) {
     <html lang="en">
       <Head title={title} />
       <Body>
-        <H1>{title}</H1>
+        <H1 className="alegrify-align-text--center">{title}</H1>
         <Main>
-          <img src={image} alt={alt} />
-          <Section>
+          <div className="alegrify-space--extra-large alegrify-align-child--center">
+            <img src={image} alt={alt} />
+          </div>
+          <Section spaceXL={exchangable}>
             <H2>{imageTitle}</H2>
             <P>{additionalComments}</P>
           </Section>
+          {exchangable && (
+            <Section>
+              <H2>One more thing...</H2>
+              <P>
+                This hug will be exchangable into a real hug when the whole
+                COVID-19 crisis is over.
+              </P>
+            </Section>
+          )}
         </Main>
       </Body>
       <Footer className="alegrify-align-text--center">

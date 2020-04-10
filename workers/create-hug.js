@@ -14,7 +14,8 @@ async function createHug(body, options = {}) {
     senderName: body.sender_name,
     receiverName: body.receiver_name,
     additionalComments: body.additional_comments,
-    hugType: body.hug_type
+    hugType: body.hug_type,
+    exchangable: body.exchangable
   }));
   const id = cuid();
 

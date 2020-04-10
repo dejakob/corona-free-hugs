@@ -1,16 +1,20 @@
-const { createHug } = require("..");
+const { renderToStaticMarkup } = require("react-dom/server");
+
+const Hug = require("../site/lib/pages/hug");
 
 (async () => {
-  const id = await createHug(
-    {
-      sender_name: "Me",
-      receiver_name: "You",
-      hug_type: "https://media.giphy.com/media/M9gU6uprqD1LWcKlKm/giphy.gif",
-      exchangable: "on",
-      additional_comments: "..."
-    },
-    { upload: false }
+  const hugHtml = renderToStaticMarkup(
+    Hug({
+      senderName: "Me",
+      receiverName: "You",
+      additionalComments: "...",
+      hugType: "https://media.giphy.com/media/M9gU6uprqD1LWcKlKm/giphy.gif",
+      exchangable: true
+    })
   );
 
-  console.log(`file:///tmp/${id}.html`);
+  require("fs").writeFileSync(
+    require("path").join(__dirname, "test.html"),
+    hugHtml
+  );
 })();
