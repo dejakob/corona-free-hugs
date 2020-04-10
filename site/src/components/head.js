@@ -1,10 +1,11 @@
 const React = require("react");
 
-function Head({ title }) {
+function Head({ title, children }) {
   return (
     <head>
       <meta charSet="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      {children}
       <link
         rel="stylesheet"
         href="https://dejakob.com/alegrify-ui/alegrify-ui.css"
