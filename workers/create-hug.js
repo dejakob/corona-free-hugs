@@ -1,6 +1,7 @@
 const cuid = require("cuid");
 
-const Hug = require("../site/src/pages/hug");
+const Hug = require("../site/lib/pages/hug");
+const { uploadFileToBucket } = require("../common/gcloud");
 
 async function createHug(body) {
   const hugHtml = Hug({
@@ -20,12 +21,16 @@ async function createHug(body) {
 
   // Output index contents
   try {
-    await writeFile(path.join(__dirname, `../dist/${id}/index.html`), hugHtml);
+    await writeFile(path.join(__dirname, `./temp/${id}.html`), hugHtml);
+    await uploadFileToBucket(
+      path.join(__dirname, `./temp/${id}.html`),
+      path.join(__dirname, `./temp`)
+    );
   } catch (ex) {
     console.error(ex);
   }
 
-  return
+  return;
 }
 
 module.exports = createHug;
