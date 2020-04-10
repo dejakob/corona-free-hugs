@@ -19,9 +19,9 @@ async function createHug(body) {
 
   // Create dist folder if not existing
   try {
-    await mkdir(path.join(__dirname, "../dist"));
+    await mkdir(path.join(__dirname, "../temp"));
   } catch (ex) {
-    console.info("Dist dir already exists");
+    console.info("Temp dir already exists");
   }
 
   // Output index contents
