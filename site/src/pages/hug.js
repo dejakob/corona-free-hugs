@@ -9,11 +9,12 @@ function Hug({ hugType, senderName, receiverName, additionalComments }) {
   const { title: imageTitle, image, alt } = HUG_TYPES.find(
     ht => ht.image === hugType
   );
-  const title = `${receiverName}, ${senderName} sent you a coronafree hug!`;
 
-  if (!hugTypeImage) {
+  if (!image) {
     throw new Error("hug type not found");
   }
+
+  const title = `${receiverName}, ${senderName} sent you a coronafree hug!`;
 
   return (
     <html lang="en">
