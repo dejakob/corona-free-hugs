@@ -51,10 +51,3 @@ async function createHug(body) {
 }
 
 module.exports = createHug;
-
-createHug({
-  receiver_name: "jhj",
-  hug_type: "https://media.giphy.com/media/M9gU6uprqD1LWcKlKm/giphy.gif",
-  exchangable: "on",
-  additional_comments: "bhjb"
-}).then(console.log);
