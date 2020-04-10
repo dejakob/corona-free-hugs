@@ -10,7 +10,7 @@ const cuid = require("cuid");
 const Hug = require("../site/lib/pages/hug");
 const { uploadFileToBucket } = require("../common/gcloud");
 
-async function createHug(body) {
+async function createHug(body, options = {}) {
   const hugHtml = Hug({
     senderName: body.sender_name,
     receiverName: body.receiver_name,
@@ -24,7 +24,9 @@ async function createHug(body) {
 
   // Upload to gcloud
   try {
-    await uploadFileToBucket(`/tmp/${id}.html`, "/tmp");
+    if (options.upload !== false) {
+      await uploadFileToBucket(`/tmp/${id}.html`, "/tmp");
+    }
   } catch (ex) {
     console.error(ex);
   }
