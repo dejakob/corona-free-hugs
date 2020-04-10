@@ -30,7 +30,7 @@ function Create() {
               <H2>Let's make it personal</H2>
 
               <Label htmlFor="senderName">Who do you think you are?</Label>
-              <Input name="sender_name" id="senderName" required />
+              <Input name="sender_name" id="senderName" required spaceL />
               <Label htmlFor="receiverName">Name of this amazing person</Label>
               <Input name="receiver_name" id="receiverName" required />
             </Section>

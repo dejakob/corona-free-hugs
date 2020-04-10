@@ -22,7 +22,7 @@ function IndexPage() {
           className="alegrify-align-child--middle body--backdrop"
         >
           <Main>
-            <form action="./create.html" method="POST">
+            <form action="./create.html" method="GET">
               <H1
                 className="alegrify-align-text--center"
                 style={{ color: "white", textShadow: "2px 2px 4px #333" }}
