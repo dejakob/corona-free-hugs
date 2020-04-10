@@ -1,5 +1,5 @@
 const React = require("react");
-const { H1, H2, Main, Section, Footer } = require("react-alegrify-ui");
+const { H1, H2, P, Main, Section, Footer } = require("react-alegrify-ui");
 
 const Head = require("../components/head");
 const Body = require("../components/body");
