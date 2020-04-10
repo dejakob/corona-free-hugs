@@ -1,3 +1,7 @@
+const fs = require("fs");
+const { promisify } = require("util");
+const writeFile = promisify(fs.writeFile);
+
 const cuid = require("cuid");
 
 const Hug = require("../site/lib/pages/hug");
