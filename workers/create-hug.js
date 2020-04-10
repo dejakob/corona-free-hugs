@@ -4,7 +4,6 @@ const { promisify } = require("util");
 const mkdir = promisify(fs.mkdir);
 const writeFile = promisify(fs.writeFile);
 const deleteFile = promisify(fs.unlink);
-const rmdir = promisify(fs.rmdir);
 
 const cuid = require("cuid");
 
@@ -28,11 +27,7 @@ async function createHug(body) {
   }
 
   // Output index contents
-  try {
-    await writeFile(path.join(__dirname, `./temp/${id}.html`), hugHtml);
-  } catch (ex) {
-    console.error(ex);
-  }
+  await writeFile(path.join(__dirname, `./temp/${id}.html`), hugHtml);
 
   // Upload to gcloud
   try {
