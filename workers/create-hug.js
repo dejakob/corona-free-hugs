@@ -1,22 +1,21 @@
 const fs = require("fs");
-const path = require("path");
 const { promisify } = require("util");
-const mkdir = promisify(fs.mkdir);
 const writeFile = promisify(fs.writeFile);
 const deleteFile = promisify(fs.unlink);
 
 const cuid = require("cuid");
+const { renderToStaticMarkup } = require("react-dom/server");
 
 const Hug = require("../site/lib/pages/hug");
 const { uploadFileToBucket } = require("../common/gcloud");
 
 async function createHug(body, options = {}) {
-  const hugHtml = Hug({
+  const hugHtml = renderToStaticMarkup(Hug({
     senderName: body.sender_name,
     receiverName: body.receiver_name,
     additionalComments: body.additional_comments,
     hugType: body.hug_type
-  });
+  }));
   const id = cuid();
 
   // Output index contents
@@ -24,7 +23,7 @@ async function createHug(body, options = {}) {
 
   // Upload to gcloud
   try {
-    if (options.upload !== false) {
+    if (options.upload !== false) {
       await uploadFileToBucket(`/tmp/${id}.html`, "/tmp");
     }
   } catch (ex) {
