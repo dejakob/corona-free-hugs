@@ -1,5 +1,15 @@
 const React = require("react");
-const { H1, H2, P, Main, Section, Footer } = require("react-alegrify-ui");
+const {
+  H1,
+  H2,
+  P,
+  Main,
+  Section,
+  Footer,
+  Grid,
+  GridCell,
+  Button
+} = require("react-alegrify-ui");
 
 const Head = require("../components/head");
 const Body = require("../components/body");
@@ -28,22 +38,49 @@ function Hug({
       <Body>
         <H1 className="alegrify-align-text--center">{title}</H1>
         <Main>
-          <div className="alegrify-space--extra-large alegrify-align-child--center">
-            <img src={image} alt={alt} />
+          <div style={{ minHeight: "calc(100vh - 194px)" }}>
+            <Grid>
+              <GridCell six>
+                <figure
+                  className="alegrify-align-child--center"
+                  style={{ backgroundColor: "#111" }}
+                >
+                  <img src={image} alt={alt} />
+                </figure>
+              </GridCell>
+              <GridCell six>
+                <Section spaceL>
+                  <H2>{imageTitle}</H2>
+                  <P>{additionalComments}</P>
+                </Section>
+
+                {exchangable && (
+                  <Section spaceL>
+                    <H2>One more thing...</H2>
+                    <P>
+                      This hug will be exchangable into a real hug when the
+                      whole COVID-19 crisis is over.
+                    </P>
+                  </Section>
+                )}
+
+                <Section spaceL>
+                  <form action="/create.html?fromhug" method="GET">
+                    <H2>Are you in a hugging mood yourself?</H2>
+                    <P spaceL>
+                      You can use{" "}
+                      <a href="/" title="Corona free hug">
+                        coronafreehug.com
+                      </a>{" "}
+                      yourself to send corona free hugs to pretty much anyone
+                      you want. For free!
+                    </P>
+                    <Button>Create a hug</Button>
+                  </form>
+                </Section>
+              </GridCell>
+            </Grid>
           </div>
-          <Section spaceXL={exchangable}>
-            <H2>{imageTitle}</H2>
-            <P>{additionalComments}</P>
-          </Section>
-          {exchangable && (
-            <Section>
-              <H2>One more thing...</H2>
-              <P>
-                This hug will be exchangable into a real hug when the whole
-                COVID-19 crisis is over.
-              </P>
-            </Section>
-          )}
         </Main>
       </Body>
       <Footer className="alegrify-align-text--center">

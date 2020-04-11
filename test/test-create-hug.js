@@ -7,7 +7,7 @@ const Hug = require("../site/lib/pages/hug");
     Hug({
       senderName: "Me",
       receiverName: "You",
-      additionalComments: "...",
+      additionalComments: "Bla bla bla  bla bla  bla bla  bla bla  bla bla  bla bla  bla bla  bla bla  bla bla  bla bla  bla bla  bla bla  bla bla  bla bla  bla bla ",
       hugType: "https://media.giphy.com/media/M9gU6uprqD1LWcKlKm/giphy.gif",
       exchangable: true
     })
