@@ -42,5 +42,14 @@ module.exports = [
     content: "Don't give up! The crisis will end one day... maybe...",
     height: 300,
     width: 300
+  },
+  {
+    image: "https://media.giphy.com/media/NhjPhBQIIxdxm/giphy.gif",
+    alt: "Cat hug",
+    title: "Cat hug",
+    content:
+      "Here's a hug... from a cat. And completely without being exposed to COVID-19. How amazing is that?",
+    height: 300,
+    width: 232
   }
 ];
