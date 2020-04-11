@@ -63,8 +63,8 @@ function Create() {
                       alt={hug.alt}
                       title={hug.title}
                       value={hug.image}
-                      width={300}
-                      height={300}
+                      width={hug.width || 300}
+                      height={hug.height || 300}
                       checkType="radio"
                       name="hug_type"
                       style={{ float: "left" }}
