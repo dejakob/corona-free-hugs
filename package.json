@@ -34,7 +34,7 @@
     "cuid": "2.1.8",
     "lsr": "2.0.0",
     "react": "16.13.1",
-    "react-alegrify-ui": "1.0.4",
+    "react-alegrify-ui": "1.0.5",
     "react-dom": "16.13.1"
   },
   "watch": {

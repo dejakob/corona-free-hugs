@@ -7,7 +7,6 @@ const {
   Input,
   Label,
   Card,
-  Dialog,
   Checkbox,
   Button,
   Footer
@@ -15,7 +14,7 @@ const {
 
 const Head = require("../components/head");
 const Body = require("../components/body");
-const HUG_TYPES = require('../config/hug-types');
+const HUG_TYPES = require("../config/hug-types");
 
 function Create() {
   const title = "Create coronafree hug";
@@ -25,7 +24,10 @@ function Create() {
       <Body>
         <H1 className="alegrify-align-text--center">{title}</H1>
         <Main>
-          <form action="https://us-central1-experiments-248915.cloudfunctions.net/create-hug" method="POST">
+          <form
+            action="https://us-central1-experiments-248915.cloudfunctions.net/create-hug"
+            method="POST"
+          >
             <Section spaceXL>
               <H2>Let's make it personal</H2>
 
@@ -66,6 +68,7 @@ function Create() {
                       width={hug.width || 300}
                       height={hug.height || 300}
                       checkType="radio"
+                      required
                       name="hug_type"
                       style={{ float: "left" }}
                     >
@@ -92,7 +95,13 @@ function Create() {
               <Label htmlFor="additionalComments">
                 Add some more text here to personalize the hug
               </Label>
-              <Input id="additionalComments" name="additional_comments" multiline spaceL />
+              <Input
+                id="additionalComments"
+                name="additional_comments"
+                multiline
+                spaceL
+                required
+              />
               <Button id="submitButton" primary>
                 Generate hug
               </Button>
@@ -102,10 +111,21 @@ function Create() {
         <Footer className="alegrify-align-text--center">
           Made with ❤ in quarantine
         </Footer>
-        <Dialog id="successDialog" title="Your hug is live!">
-          Now share this link to the hug: ...
-        </Dialog>
       </Body>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+        const submitButton = document.querySelector('.alegrify-button--primary');
+        const form = document.querySelector('form');
+        form.addEventListener('submit', handleSubmit);
+
+        function handleSubmit() {
+          submitButton.setAttribute('disabled', 'disabled');
+          submitButton.setAttribute('class', 'alegrify-button alegrify-button--primary alegrify-button--loading');
+        }
+      `
+        }}
+      ></script>
     </html>
   );
 }
