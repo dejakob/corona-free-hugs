@@ -51,5 +51,13 @@ module.exports = [
       "Here's a hug... from a cat. And completely without being exposed to COVID-19. How amazing is that?",
     height: 300,
     width: 232
+  },
+  {
+    image: "https://media.giphy.com/media/NhdNJS36csweY/giphy.gif",
+    alt: "Birthday - Michael the office",
+    title: "COVID-19 birthday hug",
+    content: "Birthdaying during the Corona crisis sucks, but here's a virtual hug to make you feel better!",
+    height: 300,
+    width: 400
   }
 ];
