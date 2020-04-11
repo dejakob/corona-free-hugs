@@ -8,7 +8,8 @@ const {
   Footer,
   Grid,
   GridCell,
-  Button
+  Button,
+  Notification
 } = require("react-alegrify-ui");
 
 const Head = require("../components/head");
@@ -36,8 +37,16 @@ function Hug({
     <html lang="en">
       <Head title={title} />
       <Body>
-        <H1 className="alegrify-align-text--center">{title}</H1>
+        <div id="successNotification" style={{ display: "none" }}>
+          <Notification success title="You successfully created a hug!" spaceXL>
+            <P spaceL>Now it's time to share this hug!</P>
+            <Button className="copyToClipboard" type="button">
+              Copy to clipboard
+            </Button>
+          </Notification>
+        </div>
         <Main>
+          <H1 className="alegrify-align-text--center">{title}</H1>
           <div style={{ minHeight: "calc(100vh - 194px)" }}>
             <Grid>
               <GridCell six>
@@ -82,10 +91,22 @@ function Hug({
             </Grid>
           </div>
         </Main>
+        <Footer className="alegrify-align-text--center">
+          Made with ❤ in quarantine
+        </Footer>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            if (window.location.href.indexOf('created=true') > -1) { showNotification(); }
+            if (typeof history !== 'undefined') history.replaceState({}, document.title, window.location.origin + window.location.pathname);
+            document.querySelector('.copyToClipboard').addEventListener('click', copyToClipboard);
+            function showNotification() { document.getElementById('successNotification').style.display = 'block'; }
+            function hideNotification() { document.getElementById('successNotification').style.display = 'none'; }
+            function copyToClipboard() { try { navigator.clipboard.writeText(window.location.origin + window.location.pathname); hideNotification(); } catch (ex) {} }
+        `
+          }}
+        ></script>
       </Body>
-      <Footer className="alegrify-align-text--center">
-        Made with ❤ in quarantine
-      </Footer>
     </html>
   );
 }
