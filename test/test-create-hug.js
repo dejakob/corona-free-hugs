@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 const { renderToStaticMarkup } = require("react-dom/server");
 
 const Hug = require("../site/lib/pages/hug");
@@ -7,7 +8,8 @@ const Hug = require("../site/lib/pages/hug");
     Hug({
       senderName: "Me",
       receiverName: "You",
-      additionalComments: "Bla bla bla  bla bla  bla bla  bla bla  bla bla  bla bla  bla bla  bla bla  bla bla  bla bla  bla bla  bla bla  bla bla  bla bla  bla bla ",
+      additionalComments:
+        "Bla bla bla  bla bla  bla bla  bla bla  bla bla  bla bla  bla bla  bla bla  bla bla  bla bla  bla bla  bla bla  bla bla  bla bla  bla bla ",
       hugType: "https://media.giphy.com/media/M9gU6uprqD1LWcKlKm/giphy.gif",
       exchangable: true
     })

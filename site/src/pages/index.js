@@ -21,6 +21,20 @@ function IndexPage() {
             property="og:image"
             content="https://coronafreehug.com/people-hugging.jpg"
           />
+          <style
+            dangerouslySetInnerHTML={{
+              __html: `
+              .body--backdrop:before {
+                background: rgba(0,0,0,0.6);
+                display: block;
+                content: '';
+                height: 100%;
+                width: 100%;
+                position: absolute;
+              }
+                    `
+            }}
+          />
         </Head>
         <Body
           style={{
@@ -46,7 +60,10 @@ function IndexPage() {
                     that the world has changed.
                   </P>
                   <P>
-                    🍩 forget that we're in this together, so let the people
+                    <span role="img" aria-label="Donut">
+                      🍩
+                    </span>{" "}
+                    forget that we&acute;re in this together, so let the people
                     know you care about them by sending a virtual hug
                   </P>
                 </div>

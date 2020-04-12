@@ -9,6 +9,9 @@
     "lint:fix": "eslint --fix './**/*.js'",
     "watch": "npm-watch"
   },
+  "engines": {
+    "node": ">=10.0.0"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -33,6 +36,7 @@
     "@google-cloud/storage": "4.7.0",
     "cuid": "2.1.8",
     "lsr": "2.0.0",
+    "prop-types": "15.7.2",
     "react": "16.13.1",
     "react-alegrify-ui": "1.0.5",
     "react-dom": "16.13.1"

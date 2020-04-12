@@ -1,4 +1,5 @@
 const React = require("react");
+const PropTypes = require("prop-types");
 const {
   H1,
   H2,
@@ -15,6 +16,17 @@ const {
 const Head = require("../components/head");
 const Body = require("../components/body");
 const HUG_TYPES = require("../config/hug-types");
+
+const propTypes = {
+  hugType: PropTypes.string.isRequired,
+  senderName: PropTypes.string.isRequired,
+  receiverName: PropTypes.string.isRequired,
+  additionalComments: PropTypes.string.isRequired,
+  exchangable: PropTypes.bool
+};
+const defaultProps = {
+  exchangable: false
+};
 
 function Hug({
   hugType,
@@ -36,15 +48,15 @@ function Hug({
   return (
     <html lang="en">
       <Head title={title}>
-        <meta name="description" content={additionalComments}></meta>
-        <meta property="og:description" content={additionalComments}></meta>
-        <meta property="og:image" content={image}></meta>
-        <meta property="og:image:alt" content={alt}></meta>
+        <meta name="description" content={additionalComments} />
+        <meta property="og:description" content={additionalComments} />
+        <meta property="og:image" content={image} />
+        <meta property="og:image:alt" content={alt} />
       </Head>
       <Body>
         <div id="successNotification" style={{ display: "none" }}>
           <Notification success title="You successfully created a hug!" spaceXL>
-            <P spaceL>Now it's time to share this hug!</P>
+            <P spaceL>Now it&acute;s time to share this hug!</P>
             <Button className="copyToClipboard" type="button">
               Copy to clipboard
             </Button>
@@ -114,10 +126,13 @@ function Hug({
             function copyToClipboard() { try { navigator.clipboard.writeText(window.location.origin + window.location.pathname); hideNotification(); } catch (ex) {} }
         `
           }}
-        ></script>
+        />
       </Body>
     </html>
   );
 }
+
+Hug.propTypes = propTypes;
+Hug.defaultProps = defaultProps;
 
 module.exports = Hug;

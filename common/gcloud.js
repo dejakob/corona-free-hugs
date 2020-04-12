@@ -1,3 +1,5 @@
+/* eslint-disable no-use-before-define,no-restricted-syntax,no-console */
+
 const { Storage } = require("@google-cloud/storage");
 const { lsrAsync } = require("lsr");
 
@@ -15,8 +17,10 @@ async function getCredentials() {
   let credentials = {};
 
   try {
+    // eslint-disable-next-line node/no-unpublished-require,global-require
     const contents = require("../credentials.js");
     credentials = { ...credentials, ...contents };
+    // eslint-disable-next-line no-empty
   } catch (ex) {}
 
   [
@@ -32,7 +36,7 @@ async function getCredentials() {
     "client_x509_cert_url"
   ].forEach(key => {
     if (process.env && process.env[key]) {
-      credentials[key] = process.env[key].replace(/\\n/gm, '\n');
+      credentials[key] = process.env[key].replace(/\\n/gm, "\n");
     }
   });
 
@@ -68,6 +72,7 @@ async function uploadFolderToBucket(folderPath) {
     .map(item => item.fullPath);
 
   for (const fileName of files) {
+    // eslint-disable-next-line no-await-in-loop
     await uploadFileToBucket(fileName, folderPath);
   }
 }

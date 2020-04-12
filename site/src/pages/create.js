@@ -29,7 +29,7 @@ function Create() {
             method="POST"
           >
             <Section spaceXL>
-              <H2>Let's make it personal</H2>
+              <H2>Let&acute;s make it personal</H2>
 
               <Label htmlFor="senderName">Who do you think you are? (the huger)</Label>
               <Input name="sender_name" id="senderName" required spaceL />
@@ -46,6 +46,7 @@ function Create() {
                 <a
                   href="https://giphy.com/"
                   target="_blank"
+                  rel="noreferrer noopener"
                   title="GIPHY: website with many animated gifs"
                   className="alegrify-a"
                 >
@@ -125,7 +126,7 @@ function Create() {
         }
       `
         }}
-      ></script>
+      />
     </html>
   );
 }

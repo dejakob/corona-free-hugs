@@ -1,4 +1,13 @@
 const React = require("react");
+const PropTypes = require("prop-types");
+
+const propTypes = {
+  title: PropTypes.string.isRequired,
+  children: PropTypes.node
+};
+const defaultProps = {
+  children: null
+};
 
 function Head({ title, children }) {
   return (
@@ -15,23 +24,11 @@ function Head({ title, children }) {
         href="https://dejakob.com/alegrify-ui/alegrify-ui.css"
       />
       <title>{title}</title>
-
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-.body--backdrop:before {
-  background: rgba(0,0,0,0.6);
-  display: block;
-  content: '';
-  height: 100%;
-  width: 100%;
-  position: absolute;
-}
-      `
-        }}
-      />
     </head>
   );
 }
+
+Head.propTypes = propTypes;
+Head.defaultProps = defaultProps;
 
 module.exports = Head;

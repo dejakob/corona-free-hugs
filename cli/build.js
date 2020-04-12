@@ -1,6 +1,9 @@
+/* eslint-disable no-console */
+
 const fs = require("fs");
 const path = require("path");
 const { promisify } = require("util");
+
 const writeFile = promisify(fs.writeFile);
 const mkdir = promisify(fs.mkdir);
 
