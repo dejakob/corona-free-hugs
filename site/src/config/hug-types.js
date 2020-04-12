@@ -43,6 +43,15 @@ module.exports = [
     width: 275
   },
   {
+    image: "https://media.giphy.com/media/Bj9k1U69GZ8Iw/giphy.gif",
+    alt: "Free hug coupon",
+    title: "Free hug coupon",
+    content:
+      "One free hug, infinite uses. Redeemable at any nearby friendly person",
+    height: 300,
+    width: 300
+  },
+  {
     image: "https://media.giphy.com/media/U0nW0QagDmTwA/giphy.gif",
     alt: "I request the highest of fives - Barney Stinson",
     title: "The highest of fives",
