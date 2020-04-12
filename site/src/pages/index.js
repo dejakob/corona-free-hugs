@@ -13,14 +13,21 @@ function IndexPage() {
     <>
       <html lang="en">
         <Head title={title}>
-          <meta name="description" content="Quarantine doesn't mean that we can no longer hug each other. Well, physically maybe, but don't worry! Coronafreehug.com can help you send a hug to all your loved ones"></meta>
-          <meta property="og:image" content="https://coronafreehug.com/people-hugging.jpg" />
+          <meta
+            name="description"
+            content="Quarantine doesn't mean that we can no longer hug each other. Well, physically maybe, but don't worry! Coronafreehug.com can help you send a hug to all your loved ones"
+          />
+          <meta
+            property="og:image"
+            content="https://coronafreehug.com/people-hugging.jpg"
+          />
         </Head>
         <Body
           style={{
             backgroundImage: "url(./people-hugging.jpg)",
             backgroundSize: "cover",
-            backgroundPosition: "center center"
+            backgroundPosition: "center center",
+            minHeight: "100vh"
           }}
           className="alegrify-align-child--middle body--backdrop"
         >
