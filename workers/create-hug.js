@@ -20,7 +20,7 @@ async function createHug(body, options = {}) {
   const id = cuid();
 
   // Output index contents
-  await writeFile(`/tmp/${id}.html`, hugHtml);
+  await writeFile(`/tmp/${id}.html`, `<!doctype html>${hugHtml}`);
 
   // Upload to gcloud
   try {

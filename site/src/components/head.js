@@ -5,6 +5,10 @@ function Head({ title, children }) {
     <head>
       <meta charSet="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta property="og:type" content="website" />
+      <meta property="og:locale" content="en-US" />
+      <meta property="og:site_name" content="Corona free hug" />
+      <meta name="theme-color" content="#4e4cc1" />
       {children}
       <link
         rel="stylesheet"

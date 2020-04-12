@@ -20,7 +20,7 @@ const createPageComponent = require("../site/lib/pages/create");
   // Output index contents
   try {
     const htmlString = renderToStaticMarkup(indexPageComponent());
-    await writeFile(path.join(__dirname, "../dist/index.html"), htmlString);
+    await writeFile(path.join(__dirname, "../dist/index.html"), `<!doctype html>${htmlString}`);
   } catch (ex) {
     console.error(ex);
   }
@@ -28,7 +28,7 @@ const createPageComponent = require("../site/lib/pages/create");
   // Output create page
   try {
     const htmlString = renderToStaticMarkup(createPageComponent());
-    await writeFile(path.join(__dirname, "../dist/create.html"), htmlString);
+    await writeFile(path.join(__dirname, "../dist/create.html"), `<!doctype html>${htmlString}`);
   } catch (ex) {
     console.error(ex);
   }

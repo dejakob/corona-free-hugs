@@ -35,7 +35,12 @@ function Hug({
 
   return (
     <html lang="en">
-      <Head title={title} />
+      <Head title={title}>
+        <meta name="description" content={additionalComments}></meta>
+        <meta property="og:description" content={additionalComments}></meta>
+        <meta property="og:image" content={image}></meta>
+        <meta property="og:image:alt" content={imageAlt}></meta>
+      </Head>
       <Body>
         <div id="successNotification" style={{ display: "none" }}>
           <Notification success title="You successfully created a hug!" spaceXL>
