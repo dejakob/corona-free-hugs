@@ -39,7 +39,7 @@ function Hug({
         <meta name="description" content={additionalComments}></meta>
         <meta property="og:description" content={additionalComments}></meta>
         <meta property="og:image" content={image}></meta>
-        <meta property="og:image:alt" content={imageAlt}></meta>
+        <meta property="og:image:alt" content={alt}></meta>
       </Head>
       <Body>
         <div id="successNotification" style={{ display: "none" }}>
