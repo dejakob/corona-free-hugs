@@ -31,9 +31,9 @@ function Create() {
             <Section spaceXL>
               <H2>Let's make it personal</H2>
 
-              <Label htmlFor="senderName">Who do you think you are?</Label>
+              <Label htmlFor="senderName">Who do you think you are? (the huger)</Label>
               <Input name="sender_name" id="senderName" required spaceL />
-              <Label htmlFor="receiverName">Name of this amazing person</Label>
+              <Label htmlFor="receiverName">Name of the amazing person you want to hug (the hugee)</Label>
               <Input name="receiver_name" id="receiverName" required />
             </Section>
             <Section spaceXL>
