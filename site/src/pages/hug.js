@@ -54,7 +54,11 @@ function Hug({
                   className="alegrify-align-child--center"
                   style={{ backgroundColor: "#111" }}
                 >
-                  <img src={image} alt={alt} />
+                  <img
+                    src={image}
+                    alt={alt}
+                    style={{ maxHeight: "100%", maxWidth: "100%" }}
+                  />
                 </figure>
               </GridCell>
               <GridCell six>
