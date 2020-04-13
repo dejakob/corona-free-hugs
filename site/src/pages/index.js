@@ -31,6 +31,8 @@ function IndexPage() {
                 height: 100%;
                 width: 100%;
                 position: absolute;
+                top: 0;
+                left: 0;
               }
                     `
             }}
@@ -41,6 +43,8 @@ function IndexPage() {
             backgroundImage: "url(./people-hugging.jpg)",
             backgroundSize: "cover",
             backgroundPosition: "center center",
+            backgroundRepeat: "no-repeat",
+            backgroundAttachment: "fixed",
             minHeight: "100vh"
           }}
           className="alegrify-align-child--middle body--backdrop"
@@ -49,7 +53,7 @@ function IndexPage() {
             <form action="./create.html" method="GET">
               <H1
                 className="alegrify-align-text--center"
-                style={{ color: "white", textShadow: "2px 2px 4px #333" }}
+                style={{ color: "white", textShadow: "2px 2px 4px #333", marginTop: 0 }}
               >
                 {title}
               </H1>
