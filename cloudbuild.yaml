@@ -1,7 +1,10 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   entrypoint: 'bash'
-  args: ['-c', 'printf "https://registry.npmjs.org/:_authToken=%s\nregistry=https://registry.npmjs.org" $_NPM_TOKEN > /workspace/.npmrc']
+  args: ['ls']
+- name: 'gcr.io/cloud-builders/docker'
+  entrypoint: 'bash'
+  args: ['pwd']
 - name: 'gcr.io/cloud-builders/npm'
   args: ['install']
 - name: 'gcr.io/cloud-builders/npm'
