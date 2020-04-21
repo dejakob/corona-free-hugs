@@ -5,6 +5,8 @@ steps:
   args: ['run', 'build']
 - name: 'gcr.io/cloud-builders/npm'
   args: ['version', 'patch']
+- name: 'export'
+  args: ['NPM_TOKEN', '$_NPM_TOKEN']
 - name: 'gcr.io/cloud-builders/npm'
   args: ['publish']
   env:
