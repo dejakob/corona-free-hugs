@@ -1,6 +1,6 @@
 const { execSync } = require("child_process");
 
-const npmRc = `https://registry.npmjs.org/:_authToken=${process.env._NPM_TOKEN}\nregistry=https://registry.npm`;
+const npmRc = `https://registry.npmjs.org/:_authToken=${process.env._NPM_TOKEN}`;
 
 console.log("npm rc", npmRc);
 
