@@ -1,10 +1,10 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   entrypoint: 'bash'
-  args: ['ls']
+  args: ['-c', 'ls']
 - name: 'gcr.io/cloud-builders/docker'
   entrypoint: 'bash'
-  args: ['pwd']
+  args: ['-c', 'pwd']
 - name: 'gcr.io/cloud-builders/npm'
   args: ['install']
 - name: 'gcr.io/cloud-builders/npm'
