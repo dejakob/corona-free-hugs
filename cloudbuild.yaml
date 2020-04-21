@@ -12,6 +12,10 @@ steps:
   args: ['cli/publish-to-npm']
   env: ['_NPM_TOKEN=$_NPM_TOKEN']
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['functions', 'deploy', 'create-hug']
+  args:
+  - functions
+  - deploy
+  - create-hug
+  - --trigger-http
 - name: node
   args: ['cli/upload-to-gcloud']
