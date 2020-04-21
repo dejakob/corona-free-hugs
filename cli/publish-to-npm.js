@@ -1,3 +1,3 @@
-const { exec } = require('child_process');
+const { execSync } = require('child_process');
 
-exec(`NPM_TOKEN=${process.env._NPM_TOKEN} npm publish`);
+execSync(`NPM_TOKEN=${process.env._NPM_TOKEN} npm publish`);
