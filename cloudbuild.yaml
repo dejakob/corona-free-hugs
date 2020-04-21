@@ -10,7 +10,7 @@ steps:
   args: ['version', 'patch']
 - name: node
   args: ['cli/publish-to-npm'],
-  env: ['_NPM_TOKEN']
+  env: ['_NPM_TOKEN=$_NPM_TOKEN']
 - name: 'gcr.io/cloud-builders/git'
   args: ['remote add origin git@github.com:dejakob/corona-free-hugs.git']
 - name: 'gcr.io/cloud-builders/git'
