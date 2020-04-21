@@ -13,6 +13,9 @@ steps:
   env: ['_NPM_TOKEN=$_NPM_TOKEN']
 - name: 'gcr.io/cloud-builders/gcloud'
   args:
+  - init
+- name: 'gcr.io/cloud-builders/gcloud'
+  args:
   - functions
   - deploy
   - create-hug
