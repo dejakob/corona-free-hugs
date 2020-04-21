@@ -1,0 +1,17 @@
+steps:
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['install']
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['run', 'lint']
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['run', 'build']
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['version', 'patch']
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['publish']
+- name: 'gcr.io/cloud-builders/git'
+  args: ['push']
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['functions', 'deploy', 'create-hug']
+- name: 'gcr.io/cloud-builders/node',
+  args: ['cli/upload-to-gcloud']
