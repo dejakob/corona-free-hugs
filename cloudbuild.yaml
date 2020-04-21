@@ -10,7 +10,6 @@ steps:
   args: ['version', 'patch']
 - name: 'gcr.io/cloud-builders/npm'
   args: ['publish']
-  env: ['NPM_TOKEN=$_NPM_TOKEN']
 - name: 'gcr.io/cloud-builders/git'
   args: ['push']
 - name: 'gcr.io/cloud-builders/gcloud'
