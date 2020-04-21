@@ -10,7 +10,7 @@ steps:
   args: ['version', 'patch']
 - name: 'gcr.io/cloud-builders/docker'
   entrypoint: 'bash'
-  args: ['cat /workspace/corona-free-hugs/.npmrc']
+  args: ['cat /workspace/.npmrc']
 - name: 'gcr.io/cloud-builders/npm'
   args: ['publish']
 - name: 'gcr.io/cloud-builders/git'
