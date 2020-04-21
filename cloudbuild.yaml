@@ -10,7 +10,7 @@ steps:
   args: ['version', 'patch']
 - name: 'gcr.io/cloud-builders/docker'
   entrypoint: 'bash'
-  args: ['echo $NPM_TOKEN']
+  args: ['cat .npmrc']
 - name: 'gcr.io/cloud-builders/npm'
   args: ['publish']
 - name: 'gcr.io/cloud-builders/git'
