@@ -1,0 +1,7 @@
+{
+  "name": "create-hug",
+  "version": "0.0.1",
+  "dependencies": {
+    "corona-free-hugs": "*"
+  }
+}

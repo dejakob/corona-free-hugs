@@ -1,0 +1,1 @@
+gcloud functions deploy create-hug --runtime nodejs10 --trigger-http
