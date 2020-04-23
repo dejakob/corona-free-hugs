@@ -2,4 +2,5 @@ build
 dist
 site/src
 credentials.js
+credentials.json
 worker-triggers
