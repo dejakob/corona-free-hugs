@@ -21,7 +21,7 @@ function Head({ title, children }) {
       {children}
       <link
         rel="stylesheet"
-        href="https://dejakob.com/alegrify-ui/alegrify-ui.css"
+        href="https://dejakob.com/alegrify-ui/alegrify-ui--dark.css"
       />
       <title>{title}</title>
     </head>

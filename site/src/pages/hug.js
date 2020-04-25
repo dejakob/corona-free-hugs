@@ -99,7 +99,7 @@ function Hug({
                     <H2>Are you in a hugging mood yourself?</H2>
                     <P spaceL>
                       You can use{" "}
-                      <a href="/" title="Corona free hug">
+                      <a className="alegrify-a" href="/" title="Corona free hug">
                         coronafreehug.com
                       </a>{" "}
                       yourself to send corona free hugs to pretty much anyone
