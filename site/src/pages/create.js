@@ -63,7 +63,7 @@ function Create() {
                   <GridCell>
                     <figure className="alegrify-avatar" role="presentation">
                       <img
-                        src="/static/icons/user.svg"
+                        src="./icons/user.svg"
                         className="alegrify-avatar__image"
                         alt="alegrify-avatar"
                       />
@@ -82,7 +82,7 @@ function Create() {
                   <GridCell>
                     <figure className="alegrify-avatar" role="presentation">
                       <img
-                        src="/static/icons/user.svg"
+                        src="./icons/user.svg"
                         className="alegrify-avatar__image"
                         alt="alegrify-avatar"
                       />
