@@ -6,10 +6,11 @@ const {
   Section,
   Input,
   Label,
-  Card,
   Checkbox,
   Button,
-  Footer
+  Footer,
+  Grid,
+  GridCell
 } = require("react-alegrify-ui");
 
 const Head = require("../components/head");
@@ -19,99 +20,179 @@ const HUG_TYPES = require("../config/hug-types");
 function Create() {
   const title = "Create coronafree hug";
   return (
-    <html lang="en">
+    <html lang="en" dir="ltr">
       <Head title={title} />
-      <Body>
-        <H1 className="alegrify-align-text--center">{title}</H1>
-        <Main>
-          <form
-            action="https://us-central1-experiments-248915.cloudfunctions.net/create-hug"
-            method="POST"
-          >
-            <Section spaceXL>
-              <H2>Let&acute;s make it personal</H2>
-
-              <Label htmlFor="senderName">Who do you think you are? (the hugger)</Label>
-              <Input name="sender_name" id="senderName" required spaceL />
-              <Label htmlFor="receiverName">Name of the amazing person you want to hug (the hugee)</Label>
-              <Input name="receiver_name" id="receiverName" required />
-            </Section>
-            <Section spaceXL>
-              <H2>What kind of hug?</H2>
-              <small
-                className="alegrify-space--large"
-                style={{ display: "block" }}
+      <Body
+        style={{
+          backgroundImage: "url(./smiling-woman-hugging.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center center",
+          backgroundRepeat: "no-repeat"
+        }}
+      >
+        <div
+          style={{
+            height: "100vh",
+            width: "100vw",
+            overflowX: "hidden",
+            overflowY: "scroll",
+            '-webkit-overflow-scrolling': 'touch'
+          }}
+        >
+          <Main>
+            <section
+              style={{ padding: "40vh 0 20vh 0" }}
+              className="alegrify-align-text--center"
+            >
+              <H1 className="alegrify-align-text--center">{title}</H1>
+              <a
+                href="#hugger"
+                title="Create the hug"
+                className="alegrify-button"
+                style={{ lineHeight: "44px", textDecoration: "none" }}
               >
-                (Gifs provided by{" "}
-                <a
-                  href="https://giphy.com/"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  title="GIPHY: website with many animated gifs"
-                  className="alegrify-a"
-                >
-                  Giphy.com
-                </a>
-                )
-              </small>
+                Get started
+              </a>
+            </section>
+            <form
+              action="https://us-central1-experiments-248915.cloudfunctions.net/create-hug"
+              method="POST"
+            >
+              <section style={{ padding: "20vh 0" }} id="hugger">
+                <Grid all center middle>
+                  <GridCell>
+                    <figure className="alegrify-avatar" role="presentation">
+                      <img
+                        src="/static/icons/user.svg"
+                        className="alegrify-avatar__image"
+                        alt="alegrify-avatar"
+                      />
+                    </figure>
+                  </GridCell>
+                  <GridCell>
+                    <Label htmlFor="senderName">
+                      Who are you exactly? (the hugger)
+                    </Label>
+                    <Input name="sender_name" id="senderName" required spaceL />
+                  </GridCell>
+                </Grid>
+              </section>
+              <section style={{ padding: "20vh 0" }} id="hugee">
+                <Grid all center middle reverse>
+                  <GridCell>
+                    <figure className="alegrify-avatar" role="presentation">
+                      <img
+                        src="/static/icons/user.svg"
+                        className="alegrify-avatar__image"
+                        alt="alegrify-avatar"
+                      />
+                    </figure>
+                  </GridCell>
+                  <GridCell>
+                    <Label htmlFor="receiverName">
+                      Name of the amazing person you want to hug (the hugee)
+                    </Label>
+                    <Input name="receiver_name" id="receiverName" required />
+                  </GridCell>
+                </Grid>
+              </section>
+              <div style={{ padding: "20vh 0" }}>
+                <Section spaceXL>
+                  <H2>What kind of hug?</H2>
 
-              <div
-                className="alegrify-align-child--start"
-                style={{ overflow: "auto", margin: "0 -8px" }}
-              >
-                {HUG_TYPES.map(hug => (
-                  <div key={hug.title} style={{ padding: "0 8px" }}>
-                    <Card
-                      image={hug.image}
-                      alt={hug.alt}
-                      title={hug.title}
-                      value={hug.image}
-                      width={hug.width || 300}
-                      height={hug.height || 300}
-                      checkType="radio"
-                      required
-                      name="hug_type"
-                      style={{ float: "left" }}
-                    >
-                      {hug.content}
-                    </Card>
+                  <div className="alegrify-media-selector">
+                    <ul className="alegrify-media-selector__list">
+                      {HUG_TYPES.map((hug, index) => (
+                        <li
+                          className="alegrify-media-selector__list-item"
+                          key={hug.title}
+                        >
+                          <input
+                            type="radio"
+                            name="hug_type"
+                            id={`hug_type__${index}`}
+                            className="alegrify-media-selector__input"
+                            checked={index === 0}
+                            value={hug.image}
+                          />
+                          <figure className="alegrify-media-selector__figure">
+                            <img
+                              className="alegrify-media-selector__image"
+                              src={hug.image}
+                              alt={hug.alt}
+                              width={hug.width || 300}
+                              height={hug.height || 300}
+                            />
+                          </figure>
+                          <label
+                            className="alegrify-media-selector__label"
+                            htmlFor={`hug_type__${index}`}
+                          >
+                            <h3>{hug.title}</h3>
+                            <p>{hug.content}</p>
+                          </label>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                ))}
+
+                  <small
+                    className="alegrify-space--large"
+                    style={{ display: "block" }}
+                  >
+                    (Gifs provided by{" "}
+                    <a
+                      href="https://giphy.com/"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      title="GIPHY: website with many animated gifs"
+                      className="alegrify-a"
+                    >
+                      Giphy.com
+                    </a>
+                    )
+                  </small>
+                </Section>
               </div>
-            </Section>
 
-            <Section spaceXL>
-              <H2>Can the virtual hug be exchanged for a real hug?</H2>
-              <Checkbox name="exchangable" id="exchangable">
-                By checking this box I acknowledge that this hug can be
-                exchanged for a real and physical hug after the lockdown ends
-                for the countries where either of the involved parties are
-                living in. It is required to show the attached coronafreehug
-                ticket in order to receive the physical hug.
-              </Checkbox>
-            </Section>
+              <div style={{ padding: "20vh 0" }}>
+                <Section spaceXL>
+                  <H2>Can the virtual hug be exchanged for a real hug?</H2>
+                  <Checkbox name="exchangable" id="exchangable">
+                    By checking this box I acknowledge that this hug can be
+                    exchanged for a real and physical hug after the lockdown
+                    ends for the countries where either of the involved parties
+                    are living in. It is required to show the attached
+                    coronafreehug ticket in order to receive the physical hug.
+                  </Checkbox>
+                </Section>
+              </div>
 
-            <Section>
-              <H2>Anything to add?</H2>
-              <Label htmlFor="additionalComments">
-                Add some more text here to personalize the hug
-              </Label>
-              <Input
-                id="additionalComments"
-                name="additional_comments"
-                multiline
-                spaceL
-                required
-              />
-              <Button id="submitButton" primary>
-                Generate hug
-              </Button>
-            </Section>
-          </form>
-        </Main>
-        <Footer className="alegrify-align-text--center">
-          Made with ❤ in quarantine
-        </Footer>
+              <div style={{ padding: "20vh 0" }}>
+                <Section>
+                  <H2>Anything to add?</H2>
+                  <Label htmlFor="additionalComments">
+                    Add some more text here to personalize the hug
+                  </Label>
+                  <Input
+                    id="additionalComments"
+                    name="additional_comments"
+                    multiline
+                    rows={5}
+                    spaceL
+                    required
+                  />
+                  <Button id="submitButton" primary>
+                    Generate hug
+                  </Button>
+                </Section>
+              </div>
+            </form>
+          </Main>
+          <Footer className="alegrify-align-text--center">
+            Made with ❤ in quarantine
+          </Footer>
+        </div>
       </Body>
       <script
         dangerouslySetInnerHTML={{

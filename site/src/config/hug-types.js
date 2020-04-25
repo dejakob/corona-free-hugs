@@ -70,6 +70,15 @@ module.exports = [
     width: 232
   },
   {
+    image: "https://media.giphy.com/media/iRjB2mfESqgec/giphy.gif",
+    alt: "Dr evil hug",
+    title: "Evil hug",
+    content:
+      "Although he's evil, he can give you a heart warming hug",
+    height: 300,
+    width: 520
+  },
+  {
     image: "https://media.giphy.com/media/3oxHQDfHIGY7jYSbuw/giphy.gif",
     alt: "Take it sleazy - Michael of the good place",
     title: "Take it sleazy",

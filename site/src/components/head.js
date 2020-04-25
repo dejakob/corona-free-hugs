@@ -13,7 +13,10 @@ function Head({ title, children }) {
   return (
     <head>
       <meta charSet="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+      />
       <meta property="og:type" content="website" />
       <meta property="og:locale" content="en-US" />
       <meta property="og:site_name" content="Corona free hug" />
@@ -21,7 +24,7 @@ function Head({ title, children }) {
       {children}
       <link
         rel="stylesheet"
-        href="https://dejakob.com/alegrify-ui/alegrify-ui.css"
+        href="https://dejakob.com/alegrify-ui/alegrify-ui--dark.css"
       />
       <title>{title}</title>
     </head>
