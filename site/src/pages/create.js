@@ -35,7 +35,6 @@ function Create() {
           href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
           rel="stylesheet"
         />
-        <link href="/static/style.css" rel="stylesheet" />
       </Head>
       <Body
         style={{
@@ -69,8 +68,8 @@ function Create() {
             <section style={{ margin: "40vh 0" }} id="hugger">
               <Grid all center middle>
                 <GridCell>
-                  <figure className="avatar" role="presentation">
-                    <img src="/static/icons/user.svg" alt="avatar" />
+                  <figure className="alegrify-avatar" role="presentation">
+                    <img src="/static/icons/user.svg" className="alegrify-avatar__image" alt="alegrify-avatar" />
                   </figure>
                 </GridCell>
                 <GridCell>
@@ -84,8 +83,8 @@ function Create() {
             <section style={{ margin: "40vh 0" }} id="hugee">
               <Grid all center middle reverse>
                 <GridCell>
-                  <figure className="avatar" role="presentation">
-                    <img src="/static/icons/user.svg" alt="avatar" />
+                  <figure className="alegrify-avatar" role="presentation">
+                    <img src="/static/icons/user.svg" className="alegrify-avatar__image" alt="alegrify-avatar" />
                   </figure>
                 </GridCell>
                 <GridCell>
@@ -100,21 +99,24 @@ function Create() {
               <Section spaceXL>
                 <H2>What kind of hug?</H2>
 
-                <div className="hug-selector">
-                  <ul className="hug-selector__list">
+                <div className="alegrify-media-selector">
+                  <ul className="alegrify-media-selector__list">
                     {HUG_TYPES.map((hug, index) => (
-                      <li className="hug-selector__list-item" key={hug.title}>
+                      <li
+                        className="alegrify-media-selector__list-item"
+                        key={hug.title}
+                      >
                         <input
                           type="radio"
                           name="hug_type"
                           id={`hug_type__${index}`}
-                          className="hug-selector__input"
+                          className="alegrify-media-selector__input"
                           checked={index === 0}
                           value={hug.image}
                         />
-                        <figure className="hug-selector__figure">
+                        <figure className="alegrify-media-selector__figure">
                           <img
-                            className="hug-selector__image"
+                            className="alegrify-media-selector__image"
                             src={hug.image}
                             alt={hug.alt}
                             width={hug.width || 300}
@@ -122,7 +124,7 @@ function Create() {
                           />
                         </figure>
                         <label
-                          className="hug-selector__label"
+                          className="alegrify-media-selector__label"
                           htmlFor={`hug_type__${index}`}
                         >
                           <h3>{hug.title}</h3>

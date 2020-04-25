@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@google-cloud/storage": "4.7.0",
-    "alegrify-ui": "1.0.12",
+    "alegrify-ui": "1.0.14",
     "cuid": "2.1.8",
     "lsr": "2.0.0",
     "prop-types": "15.7.2",
