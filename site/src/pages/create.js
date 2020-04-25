@@ -20,13 +20,8 @@ const HUG_TYPES = require("../config/hug-types");
 function Create() {
   const title = "Create coronafree hug";
   return (
-    <html lang="en">
-      <Head title={title}>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
+    <html lang="en" dir="ltr">
+      <Head title={title} />
       <Body
         style={{
           backgroundImage: "url(./smiling-woman-hugging.jpg)",
