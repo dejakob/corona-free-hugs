@@ -46,7 +46,7 @@ function Create() {
         >
           <Main>
             <section
-              style={{ margin: "40vh 0" }}
+              style={{ padding: "40vh 0 20vh 0" }}
               className="alegrify-align-text--center"
             >
               <H1 className="alegrify-align-text--center">{title}</H1>
@@ -63,7 +63,7 @@ function Create() {
               action="https://us-central1-experiments-248915.cloudfunctions.net/create-hug"
               method="POST"
             >
-              <section style={{ margin: "40vh 0" }} id="hugger">
+              <section style={{ padding: "20vh 0" }} id="hugger">
                 <Grid all center middle>
                   <GridCell>
                     <figure className="alegrify-avatar" role="presentation">
@@ -82,7 +82,7 @@ function Create() {
                   </GridCell>
                 </Grid>
               </section>
-              <section style={{ margin: "40vh 0" }} id="hugee">
+              <section style={{ padding: "20vh 0" }} id="hugee">
                 <Grid all center middle reverse>
                   <GridCell>
                     <figure className="alegrify-avatar" role="presentation">
@@ -101,7 +101,7 @@ function Create() {
                   </GridCell>
                 </Grid>
               </section>
-              <div style={{ margin: "40vh 0" }}>
+              <div style={{ padding: "20vh 0" }}>
                 <Section spaceXL>
                   <H2>What kind of hug?</H2>
 
@@ -160,7 +160,7 @@ function Create() {
                 </Section>
               </div>
 
-              <div style={{ margin: "40vh 0" }}>
+              <div style={{ padding: "20vh 0" }}>
                 <Section spaceXL>
                   <H2>Can the virtual hug be exchanged for a real hug?</H2>
                   <Checkbox name="exchangable" id="exchangable">
@@ -173,7 +173,7 @@ function Create() {
                 </Section>
               </div>
 
-              <div style={{ margin: "40vh 0" }}>
+              <div style={{ padding: "20vh 0" }}>
                 <Section>
                   <H2>Anything to add?</H2>
                   <Label htmlFor="additionalComments">
