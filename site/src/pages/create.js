@@ -10,7 +10,8 @@ const {
   Button,
   Footer,
   Grid,
-  GridCell
+  GridCell,
+  P
 } = require("react-alegrify-ui");
 
 const Head = require("../components/head");
@@ -21,7 +22,16 @@ function Create() {
   const title = "Create coronafree hug";
   return (
     <html lang="en" dir="ltr">
-      <Head title={title} />
+      <Head title={title}>
+        <meta
+          name="description"
+          content="Quarantine doesn't mean that we can no longer hug each other. Well, physically maybe, but don't worry! Coronafreehug.com can help you send a hug to all your loved ones"
+        />
+        <meta
+          property="og:image"
+          content="https://coronafreehug.com/people-hugging.jpg"
+        />
+      </Head>
       <Body
         style={{
           backgroundImage: "url(./smiling-woman-hugging.jpg)",
@@ -36,15 +46,28 @@ function Create() {
             width: "100vw",
             overflowX: "hidden",
             overflowY: "scroll",
-            '-webkit-overflow-scrolling': 'touch'
+            "-webkit-overflow-scrolling": "touch"
           }}
         >
           <Main>
             <section
-              style={{ padding: "40vh 0 20vh 0" }}
+              style={{ padding: "30vh 0 20vh 0" }}
               className="alegrify-align-text--center"
             >
               <H1 className="alegrify-align-text--center">{title}</H1>
+              <div className="alegrify-space--extra-large" style={{ maxWidth: '400px', marginLeft: 'auto', marginRight: 'auto' }}>
+                <P spaceL>
+                  If you watched the news recently, you might have noticed that
+                  the world has changed.
+                </P>
+                <P>
+                  <span role="img" aria-label="Donut">
+                    🍩
+                  </span>{" "}
+                  forget that we&acute;re in this together, so let the people
+                  know you care about them by sending a virtual hug
+                </P>
+              </div>
               <a
                 href="#hugger"
                 title="Create the hug"
