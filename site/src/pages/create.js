@@ -19,7 +19,7 @@ const Body = require("../components/body");
 const HUG_TYPES = require("../config/hug-types");
 
 function Create() {
-  const title = "Create coronafree hug";
+  const title = "Share coronafree hug";
   return (
     <html lang="en" dir="ltr">
       <Head title={title}>
@@ -55,7 +55,15 @@ function Create() {
               className="alegrify-align-text--center"
             >
               <H1 className="alegrify-align-text--center">{title}</H1>
-              <div className="alegrify-space--extra-large" style={{ maxWidth: '400px', marginLeft: 'auto', marginRight: 'auto' }}>
+              <div
+                className="alegrify-space--extra-large"
+                style={{
+                  maxWidth: "432px",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                  padding: "0 16px"
+                }}
+              >
                 <P spaceL>
                   If you watched the news recently, you might have noticed that
                   the world has changed.
