@@ -112,6 +112,7 @@ function FooterWithContent() {
           </GridCell>
         </Grid>
       </div>
+      <script src="./analytics.js" defer />
     </Footer>
   );
 }

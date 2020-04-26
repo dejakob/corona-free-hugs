@@ -6,8 +6,6 @@ const submitButton = form.querySelector("button[type='submit']");
 
 form.addEventListener("submit", handleSubmit);
 
-handleSubmit();
-
 function handleSubmit() {
   submitButton.setAttribute("disabled", "disabled");
   // Set spinner on button
