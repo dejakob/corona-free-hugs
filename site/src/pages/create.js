@@ -1,7 +1,6 @@
 const React = require("react");
 const {
   Body,
-  H1,
   H2,
   Main,
   Section,
@@ -9,125 +8,46 @@ const {
   Label,
   Checkbox,
   Button,
-  Footer,
-  Grid,
-  GridCell,
-  P,
-  MediaSelector,
-  MediaSelectorItem
+  Footer
 } = require("react-alegrify-ui");
 
-const Head = require("../components/head");
-const HUG_TYPES = require("../config/hug-types");
+const CreateHead = require("../components/create-head");
+const CreateWelcome = require("../components/create-welcome");
+const CreateForm = require("../components/create-form");
+const CreatePersonInput = require("../components/create-person-input");
+const HugSelector = require("../components/hug-selector");
 
 function Create() {
   const title = "Share coronafree hug";
   return (
     <html lang="en" dir="ltr">
-      <Head title={title}>
-        <meta
-          name="description"
-          content="Quarantine doesn't mean that we can no longer hug each other. Well, physically maybe, but don't worry! Coronafreehug.com can help you send a hug to all your loved ones"
-        />
-        <meta
-          property="og:image"
-          content="https://coronafreehug.com/people-hugging.jpg"
-        />
-      </Head>
+      <CreateHead title={title} />
       <Body backgroundImage="./smiling-woman-hugging.jpg">
         <Main>
-          <Section large plain textCenter>
-            <H1>{title}</H1>
-            <div
-              className="alegrify-space--extra-large"
-              style={{
-                maxWidth: "432px",
-                marginLeft: "auto",
-                marginRight: "auto"
-              }}
-            >
-              <P spaceL>
-                If you watched the news recently, you might have noticed that
-                the world has changed.
-              </P>
-              <P>
-                <span role="img" aria-label="Donut">
-                  🍩
-                </span>{" "}
-                forget that we&acute;re in this together, so let the people know
-                you care about them by sending a virtual hug
-              </P>
-            </div>
-            <a
-              href="#hugger"
-              title="Create the hug"
-              className="alegrify-button"
-              style={{ lineHeight: "44px", textDecoration: "none" }}
-            >
-              Get started
-            </a>
-          </Section>
-          <form
-            action="https://us-central1-experiments-248915.cloudfunctions.net/create-hug"
-            method="POST"
-          >
+          <CreateWelcome title={title} />
+          <CreateForm>
             <Section large plain id="hugger">
-              <Grid all center middle>
-                <GridCell>
-                  <figure className="alegrify-avatar" role="presentation">
-                    <img
-                      src="./icons/user.svg"
-                      className="alegrify-avatar__image"
-                      alt="alegrify avatar"
-                    />
-                  </figure>
-                </GridCell>
-                <GridCell>
-                  <Label htmlFor="senderName">
-                    Who are you exactly? (the hugger)
-                  </Label>
-                  <Input name="sender_name" id="senderName" required spaceL />
-                </GridCell>
-              </Grid>
+              <CreatePersonInput
+                alt="hugger"
+                label="Who are you exactly? (the hugger)"
+                name="sender_name"
+                id="senderName"
+              />
             </Section>
+
             <Section large plain id="hugee">
-              <Grid all center middle reverse>
-                <GridCell>
-                  <figure className="alegrify-avatar" role="presentation">
-                    <img
-                      src="./icons/user.svg"
-                      className="alegrify-avatar__image"
-                      alt="alegrify-avatar"
-                    />
-                  </figure>
-                </GridCell>
-                <GridCell>
-                  <Label htmlFor="receiverName">
-                    Name of the amazing person you want to hug (the hugee)
-                  </Label>
-                  <Input name="receiver_name" id="receiverName" required />
-                </GridCell>
-              </Grid>
+              <CreatePersonInput
+                alt="hugee"
+                label="Name of the amazing person you want to hug (the hugee)"
+                name="receiver_name"
+                id="receiverName"
+                reverse
+              />
             </Section>
+
             <Section large>
               <H2>What kind of hug?</H2>
-
-              <MediaSelector>
-                {HUG_TYPES.map((hug, index) => (
-                  <MediaSelectorItem
-                    key={hug.title}
-                    name="hug_type"
-                    checked={index === 0}
-                    value={hug.image}
-                    image={hug.image}
-                    alt={hug.alt}
-                    width={hug.width || 300}
-                    height={hug.height || 300}
-                    title={hug.title}
-                    description={hug.content}
-                  />
-                ))}
-              </MediaSelector>
+              <HugSelector />
 
               <small
                 className="alegrify-space--large"
@@ -175,7 +95,7 @@ function Create() {
                 Generate hug
               </Button>
             </Section>
-          </form>
+          </CreateForm>
         </Main>
         <Footer className="alegrify-align-text--center">
           Made with ❤ in quarantine
