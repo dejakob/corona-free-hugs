@@ -7,7 +7,7 @@ const {
   Input,
   Label,
   Checkbox,
-  Button
+  Button,
 } = require("react-alegrify-ui");
 
 const CreateHead = require("../components/create-head");
@@ -99,10 +99,7 @@ function Create() {
         </Main>
         <Footer />
       </Body>
-      <script
-        src="./create.js"
-        defer
-      />
+      <script src="./create.js" defer />
     </html>
   );
 }

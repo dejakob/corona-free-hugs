@@ -1,5 +1,15 @@
 const React = require("react");
-const { Footer, Grid, GridCell, Dl, Dt, Dd } = require("react-alegrify-ui");
+const {
+  Footer,
+  Grid,
+  GridCell,
+  Dl,
+  Dt,
+  Dd,
+  Notification,
+  P,
+  Button
+} = require("react-alegrify-ui");
 
 function FooterWithContent() {
   return (
@@ -113,6 +123,34 @@ function FooterWithContent() {
         </Grid>
       </div>
       <script src="./analytics.js" defer />
+
+      <div
+        id="cookieBanner"
+        role="banner"
+        style={{
+          position: "absolute",
+          zIndex: "2",
+          top: 0,
+          right: 0,
+          left: 0,
+          bottom: 0,
+          background: "rgba(0, 0, 0, 0.9)",
+          display: "none",
+          alignItems: "flex-end",
+          justifyContent: "flex-end"
+        }}
+        aria-hidden="true"
+      >
+        <Notification info title="This website uses cookies">
+          <P spaceL>
+            Your browser might store cookies when you&acute;re using this site,
+            mainly related to the usage of 3rd party services.
+          </P>
+          <Button primary type="button">
+            Got it
+          </Button>
+        </Notification>
+      </div>
     </Footer>
   );
 }
