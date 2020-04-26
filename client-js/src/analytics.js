@@ -9,6 +9,11 @@ script.setAttribute(
 );
 document.body.appendChild(script);
 
+const adsScript = document.createElement('script');
+script.setAttribute('data-ad-client', 'ca-pub-9109142918872098');
+script.setAttribute('src', 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js');
+document.body.appendChild(adsScript);
+
 /* Show cookiebanner */
 const cookieBanner = document.getElementById("cookieBanner");
 
@@ -45,6 +50,7 @@ function showCookieBanner() {
   }
 }
 
+/** Init Google ads */
 /* eslint-disable */
 window.dataLayer = window.dataLayer || [];
 function gtag() {
