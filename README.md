@@ -1,6 +1,6 @@
 # Corona free hug
 
-![NPM version](https://img.shields.io/npm/v/corona-free-hugs)
+[![NPM version](https://img.shields.io/npm/v/corona-free-hugs)](https://www.npmjs.com/package/corona-free-hugs)
 
 If you watched the news recently, you might have noticed that the world has changed.
 
