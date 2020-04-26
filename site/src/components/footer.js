@@ -20,6 +20,18 @@ function FooterWithContent() {
             <Dl>
               <Dt>Made with</Dt>
               <Dd>❤ in quarantine</Dd>
+              <Dt>Contribute</Dt>
+              <Dd>
+                <a
+                  className="alegrify-a"
+                  href="https://github.com/dejakob/corona-free-hugs"
+                  title="Check out the repo on GitHub"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  Fork on GitHub
+                </a>
+              </Dd>
             </Dl>
           </GridCell>
           <GridCell three textCenter>
