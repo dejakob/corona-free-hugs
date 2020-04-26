@@ -7,8 +7,7 @@ const {
   Input,
   Label,
   Checkbox,
-  Button,
-  Footer
+  Button
 } = require("react-alegrify-ui");
 
 const CreateHead = require("../components/create-head");
@@ -16,6 +15,7 @@ const CreateWelcome = require("../components/create-welcome");
 const CreateForm = require("../components/create-form");
 const CreatePersonInput = require("../components/create-person-input");
 const HugSelector = require("../components/hug-selector");
+const Footer = require("../components/footer");
 
 function Create() {
   const title = "Share coronafree hug";
@@ -97,9 +97,7 @@ function Create() {
             </Section>
           </CreateForm>
         </Main>
-        <Footer className="alegrify-align-text--center">
-          Made with ❤ in quarantine
-        </Footer>
+        <Footer />
       </Body>
       <script
         dangerouslySetInnerHTML={{
