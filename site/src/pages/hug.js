@@ -1,12 +1,12 @@
 const React = require("react");
 const PropTypes = require("prop-types");
 const {
+  Body,
   H1,
   H2,
   P,
   Main,
   Section,
-  Footer,
   Grid,
   GridCell,
   Button,
@@ -14,7 +14,7 @@ const {
 } = require("react-alegrify-ui");
 
 const Head = require("../components/head");
-const Body = require("../components/body");
+const Footer = require("../components/footer");
 const HUG_TYPES = require("../config/hug-types");
 
 const propTypes = {
@@ -99,7 +99,11 @@ function Hug({
                     <H2>Are you in a hugging mood yourself?</H2>
                     <P spaceL>
                       You can use{" "}
-                      <a className="alegrify-a" href="/" title="Corona free hug">
+                      <a
+                        className="alegrify-a"
+                        href="/"
+                        title="Corona free hug"
+                      >
                         coronafreehug.com
                       </a>{" "}
                       yourself to send corona free hugs to pretty much anyone
@@ -112,9 +116,7 @@ function Hug({
             </Grid>
           </div>
         </Main>
-        <Footer className="alegrify-align-text--center">
-          Made with ❤ in quarantine
-        </Footer>
+        <Footer />
         <script
           dangerouslySetInnerHTML={{
             __html: `
