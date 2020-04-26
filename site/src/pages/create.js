@@ -100,18 +100,8 @@ function Create() {
         <Footer />
       </Body>
       <script
-        dangerouslySetInnerHTML={{
-          __html: `
-        const submitButton = document.querySelector('.alegrify-button--primary');
-        const form = document.querySelector('form');
-        form.addEventListener('submit', handleSubmit);
-
-        function handleSubmit() {
-          submitButton.setAttribute('disabled', 'disabled');
-          submitButton.setAttribute('class', 'alegrify-button alegrify-button--primary alegrify-button--loading');
-        }
-      `
-        }}
+        src="./create.js"
+        defer
       />
     </html>
   );
