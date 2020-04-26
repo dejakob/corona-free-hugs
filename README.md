@@ -1,5 +1,7 @@
 # Corona free hug
 
+![NPM version](https://img.shields.io/npm/v/corona-free-hugs)
+
 If you watched the news recently, you might have noticed that the world has changed.
 
 🍩 forget that we´re in this together, so let the people know you care about them by sending a virtual hug
