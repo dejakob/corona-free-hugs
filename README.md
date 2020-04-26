@@ -43,3 +43,4 @@ This way, there'll be no server delay when opening a page; but a little bit when
 - [Tabler icons](https://github.com/tabler/tabler-icons)
 - [Alegrify UI - dark theme](https://dejakob.com/alegrify-ui)
 - [React Alegrify UI](https://dejakob.com/react-alegrify-ui)
+- [Pexels stock photos](https://www.pexels.com/)
