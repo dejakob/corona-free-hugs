@@ -1,6 +1,7 @@
 const React = require("react");
 const PropTypes = require("prop-types");
 const {
+  Body,
   H1,
   H2,
   P,
@@ -14,7 +15,6 @@ const {
 } = require("react-alegrify-ui");
 
 const Head = require("../components/head");
-const Body = require("../components/body");
 const HUG_TYPES = require("../config/hug-types");
 
 const propTypes = {
