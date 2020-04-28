@@ -1,16 +1,16 @@
 /* eslint-env browser */
 /* eslint-disable no-use-before-define */
-const { document } = window;
-const form = document.querySelector("form");
-const submitButton = form.querySelector("button[type='submit']");
+// Polyfills
+import "@babel/polyfill";
+import "core-js/modules/es.promise";
+import "core-js/modules/es.array.iterator";
 
-form.addEventListener("submit", handleSubmit);
+init();
 
-function handleSubmit() {
-  submitButton.setAttribute("disabled", "disabled");
-  // Set spinner on button
-  submitButton.setAttribute(
-    "class",
-    "alegrify-button alegrify-button--primary alegrify-button--loading"
-  );
+async function init() {
+  // Load async
+  import("./create-form");
+
+  const { mount: mountCreateStepper } = await import("./create-stepper");
+  mountCreateStepper();
 }
