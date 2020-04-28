@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npm run build:client-js && npm run build:server-js && npm run build:generate-static-pages && npm run build:copy:assets",
-    "build:client-js": "webpack --config ./client-js/webpack.config.js && npm run build:copy:client-js",
+    "build": "npm run build:client-js && npm run build:server-js && npm run build:generate-static-pages && npm run build:copy:client-js && npm run build:copy:assets",
+    "build:client-js": "webpack --config ./client-js/webpack.config.js",
     "build:server-js": "babel site/src --out-dir site/lib",
     "build:generate-static-pages": "node cli/build.js",
     "build:copy:client-js": "cp -R client-js/lib/* dist",
