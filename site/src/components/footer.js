@@ -141,7 +141,7 @@ function FooterWithContent() {
         role="banner"
         style={{
           position: "absolute",
-          zIndex: "2",
+          zIndex: "3",
           top: 0,
           right: 0,
           left: 0,

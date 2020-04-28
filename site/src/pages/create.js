@@ -45,7 +45,7 @@ function Create() {
               />
             </Section>
 
-            <Section large>
+            <Section large id="hugType">
               <H2>What kind of hug?</H2>
               <HugSelector />
 
@@ -67,7 +67,7 @@ function Create() {
               </small>
             </Section>
 
-            <Section large>
+            <Section large id="hugExchange">
               <H2>Can the virtual hug be exchanged for a real hug?</H2>
               <Checkbox name="exchangable" id="exchangable">
                 By checking this box I acknowledge that this hug can be
@@ -78,7 +78,7 @@ function Create() {
               </Checkbox>
             </Section>
 
-            <Section large>
+            <Section large id="hugAdd">
               <H2>Anything to add?</H2>
               <Label htmlFor="additionalComments">
                 Add some more text here to personalize the hug
