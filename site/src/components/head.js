@@ -31,14 +31,21 @@ function Head({ title, children, isAmp }) {
   return (
     <head>
       <meta charSet="UTF-8" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta
         name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+        content="width=device-width,minimum-scale=1.0,initial-scale=1,user-scalable=yes"
       />
+      <meta
+        name="keywords"
+        content="COVID-19, Coronavirus, free hugs, hugs, quarantine, lockdown, 2020, social distancing, coronafree"
+      />
+      <meta property="og:title" content={title} />
       <meta property="og:type" content="website" />
       <meta property="og:locale" content="en-US" />
       <meta property="og:site_name" content="Corona free hug" />
       <meta name="theme-color" content="#4e4cc1" />
+      <meta name="msapplication-TileColor" content="#4e4cc1" />
       {children}
       {isAmp ? (
         <style dangerouslySetInnerHTML={{ __html: alegrifyUICss }} />
