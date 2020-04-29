@@ -1,15 +1,33 @@
+const fs = require("fs");
+const path = require("path");
+
 const React = require("react");
 const PropTypes = require("prop-types");
 
 const propTypes = {
   title: PropTypes.string.isRequired,
-  children: PropTypes.node
+  children: PropTypes.node,
+  isAmp: PropTypes.bool
 };
 const defaultProps = {
-  children: null
+  children: null,
+  isAmp: false
 };
 
-function Head({ title, children }) {
+function Head({ title, children, isAmp }) {
+  let alegrifyUICss;
+
+  if (isAmp) {
+    alegrifyUICss = fs
+      .readFileSync(
+        path.join(
+          __dirname,
+          "../../../node_modules/alegrify-ui/alegrify-ui--dark.min.css"
+        )
+      )
+      .toString();
+  }
+
   return (
     <head>
       <meta charSet="UTF-8" />
@@ -22,10 +40,14 @@ function Head({ title, children }) {
       <meta property="og:site_name" content="Corona free hug" />
       <meta name="theme-color" content="#4e4cc1" />
       {children}
-      <link
-        rel="stylesheet"
-        href="https://dejakob.com/alegrify-ui/alegrify-ui--dark.css"
-      />
+      {isAmp ? (
+        <style dangerouslySetInnerHTML={{ __html: alegrifyUICss }} />
+      ) : (
+        <link
+          rel="stylesheet"
+          href="https://dejakob.com/alegrify-ui/alegrify-ui--dark.css"
+        />
+      )}
       <title>{title}</title>
     </head>
   );

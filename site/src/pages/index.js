@@ -5,10 +5,10 @@ const CreatePage = require("./create");
 /**
  *
  */
-function IndexPage() {
-
+function IndexPage(props) {
   // Also create create.html, for legacy reasons
-  return <CreatePage />;
+  /* eslint-disable react/jsx-props-no-spreading */
+  return <CreatePage {...props} />;
 }
 
 module.exports = IndexPage;
