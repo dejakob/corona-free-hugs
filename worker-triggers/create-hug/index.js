@@ -1,5 +1,5 @@
-/* eslint-disable camelcase */
-const { createHug } = require('corona-free-hugs');
+/* eslint-disable camelcase,node/no-unsupported-features/es-syntax */
+const { createHug } = require("corona-free-hugs");
 
 /**
  * Responds to any HTTP request.
@@ -8,7 +8,13 @@ const { createHug } = require('corona-free-hugs');
  * @param {!express:Response} res HTTP response context.
  */
 exports.createHug = (req, res) => {
-  const { receiver_name, sender_name, hug_type, exchangable, additional_comments } = req.body;
+  const {
+    receiver_name,
+    sender_name,
+    hug_type,
+    exchangable,
+    additional_comments
+  } = { ...req.body, ...req.query };
 
   createHug({
     receiver_name,
@@ -17,8 +23,8 @@ exports.createHug = (req, res) => {
     exchangable,
     additional_comments
   })
-  .then(id => {
-    res.redirect(`https://coronafreehug.com/${id}.html?created=true`);
-  })
-  .catch(() => res.status(500));
+    .then(id => {
+      res.redirect(`https://coronafreehug.com/${id}.html?created=true`);
+    })
+    .catch(() => res.status(500));
 };

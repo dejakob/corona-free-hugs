@@ -1,4 +1,5 @@
 const React = require("react");
+const PropTypes = require("prop-types");
 const {
   Body,
   H2,
@@ -7,7 +8,7 @@ const {
   Input,
   Label,
   Checkbox,
-  Button,
+  Button
 } = require("react-alegrify-ui");
 
 const CreateHead = require("../components/create-head");
@@ -17,15 +18,15 @@ const CreatePersonInput = require("../components/create-person-input");
 const HugSelector = require("../components/hug-selector");
 const Footer = require("../components/footer");
 
-function Create() {
+function Create({ isAmp }) {
   const title = "Share coronafree hug";
   return (
     <html lang="en" dir="ltr">
-      <CreateHead title={title} />
+      <CreateHead title={title} isAmp={isAmp} />
       <Body backgroundImage="./smiling-woman-hugging.jpg">
         <Main>
           <CreateWelcome title={title} />
-          <CreateForm>
+          <CreateForm isAmp={isAmp}>
             <Section large plain id="hugger">
               <CreatePersonInput
                 alt="hugger"
@@ -97,11 +98,17 @@ function Create() {
             </Section>
           </CreateForm>
         </Main>
-        <Footer />
+        <Footer isAmp={isAmp} />
       </Body>
       <script src="./create.js" defer />
     </html>
   );
 }
+Create.propTypes = {
+  isAmp: PropTypes.bool
+};
+Create.defaultProps = {
+  isAmp: false
+};
 
 module.exports = Create;

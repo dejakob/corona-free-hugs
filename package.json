@@ -46,25 +46,20 @@
   "dependencies": {
     "@babel/polyfill": "7.8.7",
     "@google-cloud/storage": "4.7.0",
-    "alegrify-ui": "1.0.14",
+    "alegrify-ui": "1.0.25",
     "core-js": "3.6.5",
     "cuid": "2.1.8",
     "lsr": "2.0.0",
     "prop-types": "15.7.2",
     "react": "16.13.1",
-    "react-alegrify-ui": "1.0.18",
+    "react-alegrify-ui": "1.0.19",
     "react-dom": "16.13.1"
   },
   "watch": {
-    "build:server-js": {
+    "build": {
       "patterns": [
+        "client-js/src",
         "site/src"
-      ],
-      "quiet": false
-    },
-    "build:client-js": {
-      "patterns": [
-        "client-js/src"
       ],
       "quiet": false
     }
