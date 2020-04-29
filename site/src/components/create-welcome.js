@@ -20,7 +20,7 @@ function CreateWelcome({ title }) {
         </P>
       </div>
       <a
-        href="#senderName"
+        href="#createForm"
         title="Create the hug"
         className="alegrify-button"
         style={{ lineHeight: "44px", textDecoration: "none" }}
